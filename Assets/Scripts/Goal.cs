@@ -19,14 +19,31 @@ public class Goal : MonoBehaviour
     }
     void checkScore()
     {
+        string gamePoint = "6";
+
         if (transform.position.x < 0)
         {
-            player2Score.text = (int.Parse(player2Score.text) + 1).ToString();
-        }
-
-        if (transform.position.x > 0)
+            if (player2Score.text.ToString() == gamePoint)
+            {
+                player2Score.text = "0";
+            } 
+            else
+            {
+                player2Score.text = (int.Parse(player2Score.text) + 1).ToString();
+            }
+            
+        } 
+        
+        else
         {
-            player1Score.text = (int.Parse(player1Score.text) + 1).ToString();
+            if (player1Score.text.ToString() == gamePoint)
+            {
+                player1Score.text = "0";
+            }
+            else
+            {
+                player1Score.text = (int.Parse(player1Score.text) + 1).ToString();
+            }
         }
     }
 }
